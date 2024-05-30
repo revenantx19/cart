@@ -20,7 +20,6 @@ public class BasketController {
     public void addItem(@RequestParam("itemIds") List<Integer> itemIds) {
         System.out.println("itemIds = " + itemIds);
         //itemIds.forEach(cartService::addItem);
-
     }
 
     @GetMapping("/get")
