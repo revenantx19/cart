@@ -2,11 +2,12 @@ package com.cart.cart;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.List;
 
 @Service
-@RequestScope
+//@SessionScope
 public class BasketService {
     private final Basket basket;
 

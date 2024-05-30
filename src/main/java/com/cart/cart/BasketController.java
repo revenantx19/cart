@@ -1,6 +1,7 @@
 package com.cart.cart;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,16 +11,15 @@ import java.util.List;
 public class BasketController {
 
     private final BasketService basketService;
-
     @Autowired
     public BasketController(BasketService basketService) {
         this.basketService = basketService;
     }
 
-    @PostMapping("/add")
+    @GetMapping("/add")
     public void addItem(@RequestParam("itemIds") List<Integer> itemIds) {
         System.out.println("itemIds = " + itemIds);
-        //itemIds.forEach(cartService::addItem);
+        itemIds.forEach(basketService::addItem);
     }
 
     @GetMapping("/get")
